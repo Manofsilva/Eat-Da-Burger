@@ -1,1 +1,27 @@
-<p>Successfully  connected to the server!</p>
+<div class="header-container">
+  <img id="hamburger-image" src="../Pubic/assets/img/Burger.jpg" alt="Burger image.">
+  <header>Eat-Da-Burger!</header>
+</div>
+
+<div class="main-container">
+  <section id="available-hamburgers">
+    <ul id="burger-list">
+      {{#each burgers}}
+        {{#unless this.devoured}}
+          <li class="available-burger">
+            <span class="burgers">
+              {{this.id}}
+              {{this.burger_name}}
+            </span>
+            <span id="devour-button">
+              <form action="/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devoured" value="true">
+                <button class="devour-button" type="submit">Devour it!</button>
+              </form>
+            </span>
+          </li>
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </section>
+</div>
