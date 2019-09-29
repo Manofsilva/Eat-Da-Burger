@@ -30,7 +30,7 @@ $(function(){
             type: "POST",
             data: newBurger
         }).then(function(){
-            console.log("Crafted a Burger");
+            console.log("You Crafted a Burger");
 
             location.reload();
         });
